@@ -1,23 +1,14 @@
-package com.postech.aura_ms_product.domain;
+package com.postech.aura_ms_product.adapters.dto;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class Product {
+public class ProductDTO {
     private Long id;
     private String name;
     private UUID sku;
     private BigDecimal price;
     private String description;
-
-    public Product(Long id, String name, UUID sku, BigDecimal price, String description) {
-        this.id = id;
-        this.name = name;
-        this.sku = sku;
-        this.price = price;
-        this.description = description;
-    }
 
     public Long getId() {
         return id;
@@ -58,5 +49,4 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-
 }

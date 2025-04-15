@@ -1,4 +1,4 @@
-package com.postech.aura_ms_product.entity;
+package com.postech.aura_ms_product.gateway.database.jpa.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
