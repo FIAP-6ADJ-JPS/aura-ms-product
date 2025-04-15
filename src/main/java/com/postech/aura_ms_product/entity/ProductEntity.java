@@ -18,23 +18,18 @@ import java.util.UUID;
 @AllArgsConstructor
 public class ProductEntity {
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(nullable = false, length = 50, unique = true)
-    private String sku;
+    @Column(nullable = false, unique = true)
+    private UUID sku;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
 
     @Column(columnDefinition = "TEXT")
     private String description;
-
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
-
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 }
