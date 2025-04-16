@@ -1,12 +1,11 @@
 package com.postech.aura_ms_product.adapters.dto;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 public class ProductDTO {
     private Long id;
     private String name;
-    private UUID sku;
+    private String sku;
     private BigDecimal price;
     private String description;
 
@@ -26,11 +25,11 @@ public class ProductDTO {
         this.name = name;
     }
 
-    public UUID getSku() {
+    public String getSku() {
         return sku;
     }
 
-    public void setSku(UUID sku) {
+    public void setSku(String sku) {
         this.sku = sku;
     }
 

@@ -1,17 +1,17 @@
 package com.postech.aura_ms_product.domain;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class Product {
     private Long id;
     private String name;
-    private UUID sku;
+    private String sku;
     private BigDecimal price;
     private String description;
 
-    public Product(Long id, String name, UUID sku, BigDecimal price, String description) {
+    public Product(){}
+
+    public Product(Long id, String name, String sku, BigDecimal price, String description) {
         this.id = id;
         this.name = name;
         this.sku = sku;
@@ -35,11 +35,11 @@ public class Product {
         this.name = name;
     }
 
-    public UUID getSku() {
+    public String getSku() {
         return sku;
     }
 
-    public void setSku(UUID sku) {
+    public void setSku(String sku) {
         this.sku = sku;
     }
 

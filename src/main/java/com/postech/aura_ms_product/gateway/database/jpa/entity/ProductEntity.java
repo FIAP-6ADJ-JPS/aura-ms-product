@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 @Entity
 @Table(name = "product")
@@ -24,7 +23,7 @@ public class ProductEntity {
     private String name;
 
     @Column(nullable = false, unique = true)
-    private UUID sku;
+    private String sku;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;

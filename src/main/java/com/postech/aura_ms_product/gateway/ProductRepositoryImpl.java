@@ -6,11 +6,13 @@ import com.postech.aura_ms_product.gateway.database.jpa.entity.ProductEntity;
 import com.postech.aura_ms_product.gateway.database.jpa.repository.ProductJpaRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Component
+@Service
 public class ProductRepositoryImpl implements ProductRepository {
 
     private final ProductJpaRepository productJpaRepository;
