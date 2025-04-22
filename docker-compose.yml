@@ -1,0 +1,39 @@
+services:
+  # Product Microservice
+  product_db:
+    image: postgres:13
+    container_name: product_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: aura_ms_product
+    ports:
+      - "5433:5432"
+    volumes:
+      - product_pgdata:/var/lib/postgresql/data
+    networks:
+      - aura_network
+
+  product_flyway:
+    image: flyway/flyway:10.12.0
+    container_name: product_flyway
+    depends_on:
+      - product_db
+    command: [
+      "migrate",
+      "-url=jdbc:postgresql://product_postgres_db:5433/aura_ms_product",
+      "-user=postgres",
+      "-password=postgres"
+    ]
+    volumes:
+      - ./aura-ms-product/src/main/resources/db/migration:/flyway/sql
+    networks:
+      - aura_network
+
+networks:
+  aura_network:
+    driver: bridge
+
+volumes:
+  product_pgdata:

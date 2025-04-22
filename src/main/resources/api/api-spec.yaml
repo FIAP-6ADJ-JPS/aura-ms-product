@@ -7,7 +7,7 @@ info:
     name: Equipe Aura
     email: equipe@aura.com.br
 servers:
-  - url: 'http://localhost:8081'
+  - url: 'http://localhost:8003'
     description: Servidor local
 tags:
   - name: products
