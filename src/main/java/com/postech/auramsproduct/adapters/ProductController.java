@@ -47,4 +47,9 @@ public class ProductController {
         return ResponseEntity.ok(response);
     }
 
+    @PostMapping("list/sku")
+    public ResponseEntity<List<ProductDTO>> listProductsBySku(@RequestBody List<String> sku) {
+        List<ProductDTO> response = findProductUseCase.findAllBySku(sku);
+        return ResponseEntity.ok(response);
+    }
 }

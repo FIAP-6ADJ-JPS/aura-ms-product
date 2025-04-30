@@ -36,6 +36,12 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
+    public List<ProductEntity> findAllProductsBySku(List<String> sku){
+        List<ProductEntity> productEntityList = productJpaRepository.findAllProductsBySkuIn(sku);
+        return productEntityList;
+    }
+
+    @Override
     public Optional<Product> findById(Long id) {
         return productJpaRepository.findById(id)
                 .map(entity -> modelMapper.map(entity, Product.class));

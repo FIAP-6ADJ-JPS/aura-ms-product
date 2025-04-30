@@ -40,4 +40,10 @@ public class FindProductUseCase {
 
         return modelMapper.map(product, ProductDTO.class);
     }
+
+    public List<ProductDTO> findAllBySku(List<String> sku) {
+        return productRepository.findAllProductsBySku(sku).stream()
+                .map(product -> modelMapper.map(product, ProductDTO.class))
+                .collect(Collectors.toList());
+    }
 }
